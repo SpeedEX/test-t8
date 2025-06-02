@@ -4,8 +4,8 @@ from typing import List
 def resolve_input(input_line: str) -> List[int]:
     char_to_remove = list("[]")
     line_no_bracket = "".join((c if c not in char_to_remove else "" for c in input_line))
-    chunks = line_no_bracket.split(",")
-
+    chunks = [c for c in line_no_bracket.split(",") if c]
+    # print(f"{chunks=}")
     return [int(str.strip(chunk)) for chunk in chunks]
 
 

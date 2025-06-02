@@ -14,15 +14,13 @@ def operate(op: str, a: int, b: int) -> int:
         raise ValueError(f"Operation {op} is not supported.")
 
 
-"""
-    A = 1
-    B = 0
-    C = 1
-    ..
-"""
-
-
 def char_to_01(c: str) -> int:
+    """
+        A = 1
+        B = 0
+        C = 1
+        ..
+    """
     return (ord(c[0]) - ord('A') + 1) % 2
 
 
@@ -56,7 +54,7 @@ def solve(input_line: str) -> int:
         elif token == ")":
             last_val = stack.pop()
             stack.pop()  # pop (
-            if not stack:
+            if not stack or stack[-1] == "(":
                 stack.append(last_val)
             else:
                 # in case there is a summation value before (

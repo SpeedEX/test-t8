@@ -12,8 +12,8 @@ def translate_input(input_line: str) -> Tuple[List[str], str]:
     no_bracket = input_line.strip().lstrip("[").rstrip("]")
     split_result = no_bracket.split(",")
     last_item = sanitize(split_result[-1])
-    print(f"{no_bracket=}")
-    print(f"{split_result=}")
+    # print(f"{no_bracket=}")
+    # print(f"{split_result=}")
     items_in_queue = [sanitize(item) for item in split_result[:-1]]
 
     return items_in_queue, last_item
@@ -48,6 +48,5 @@ def main():
     print(ans)
 
 
-# [['Apple', 'Banana', 'Cherry'], 'Tomato']
 if __name__ == '__main__':
     main()
