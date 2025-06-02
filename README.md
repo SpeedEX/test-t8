@@ -7,3 +7,6 @@ Find test cases in /test directory
 ```shell
 python -m unittest -v
 ```
+
+# Python version
+Require python 3.7+
